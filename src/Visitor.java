@@ -24,11 +24,11 @@ public class Visitor extends Person{
         this.vid = vid;
     }
 
-    public int getage() {
+    public int getAge() {
         return age;
     }
 
-    public void  setage(int age) {
+    public void  setAge(int age) {
         this.age = age;
     }
 
