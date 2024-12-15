@@ -8,8 +8,10 @@ public class AssignmentTwo {
         //part4B.partFourB();
         //AssignmentTwo part5 = new AssignmentTwo();
         //part5.partFive();
-        AssignmentTwo part6 = new AssignmentTwo();
-        part6.partSix();
+        //AssignmentTwo part6 = new AssignmentTwo();
+        //part6.partSix();
+        AssignmentTwo part7 = new AssignmentTwo();
+        part7.partSeven();
     }
     public void partThree(){
         Ride ride = new Ride("rollerCoaster", "RC001", null,2,0);
@@ -116,5 +118,10 @@ public class AssignmentTwo {
         ride.exportRideHistory("RideHistory");
     }
     public void partSeven(){
+        Ride ride = new Ride("rollerCoaster", "RC001", null,2,0);
+        ride.importRideHistory("RideHistory.csv");
+        ride.sortCompletedVisitors();
+        ride.numberOfVisitors();
+        ride.printRideHistory();
     }
 }
