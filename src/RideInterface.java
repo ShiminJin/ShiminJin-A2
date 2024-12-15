@@ -3,8 +3,8 @@ public interface RideInterface {
     Visitor removeVisitorFromQueue();
     void printQueue();
     void runOneCycle();
-    void addVisitorToHistory(int Visitor);
-    void checkVisitorFromHistory(int Visitor);
+    void addVisitorToHistory(Visitor Visitor);
+    boolean checkVisitorFromHistory(String Visitor);
     void numberOfVisitors(); 
     void printRideHistory();
 }
