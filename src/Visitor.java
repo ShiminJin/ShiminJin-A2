@@ -31,4 +31,13 @@ public class Visitor extends Person{
     public void  setage(int age) {
         this.age = age;
     }
+
+    @Override
+    public void printInfo() {
+        super.printInfo();
+        System.out.println("vid: " + this.vid);
+        System.out.println("age: " + this.age);
+    }
+
+
 }

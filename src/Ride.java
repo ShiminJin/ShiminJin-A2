@@ -48,20 +48,23 @@ public class Ride implements RideInterface{
     }
     @Override
     public Visitor removeVisitorFromQueue() {
-        // 移除并返回队列头部的游客（如果存在）
         Visitor visitor = waitingLine.poll();
         if (visitor != null) {
-            System.out.println("已从等待队列中移除 " + visitor.getName());
+            System.out.println("Removed from waiting queue: " + visitor.getName());
         } else {
-            System.out.println("没有游客在等待队列中。");
+            System.out.println("There are no visitors in the waiting queue.");
         }
         return visitor;
     }
     @Override
     public void printQueue() {
-        System.out.println("当前等待队列中的游客有：");
+        System.out.println("The current visitors in the waiting queue are:");
         for (Visitor visitor : waitingLine) {
-            System.out.println(visitor);
+            System.out.println("-");
+            visitor.printInfo();
+            System.out.println("-");
+
         }
+
         } 
 }

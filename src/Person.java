@@ -39,4 +39,9 @@ public abstract class Person {
     public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
     }
+    public void printInfo() {
+        System.out.println("name: " + this.name);
+        System.out.println("id: " + this.id);
+        System.out.println("phoneNum: " + this.phoneNum);
+    }
 }
