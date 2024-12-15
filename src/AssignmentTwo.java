@@ -6,8 +6,10 @@ public class AssignmentTwo {
         //part4A.partFourA();       
         //AssignmentTwo part4B = new AssignmentTwo();
         //part4B.partFourB();
-        AssignmentTwo part5 = new AssignmentTwo();
-        part5.partFive();
+        //AssignmentTwo part5 = new AssignmentTwo();
+        //part5.partFive();
+        AssignmentTwo part6 = new AssignmentTwo();
+        part6.partSix();
     }
     public void partThree(){
         Ride ride = new Ride("rollerCoaster", "RC001", null,2,0);
@@ -99,6 +101,19 @@ public class AssignmentTwo {
         ride.printRideHistory();
     }
     public void partSix(){
+        Ride ride = new Ride("rollerCoaster", "RC001", null,2,0);
+        Visitor visitor1 = new Visitor("Jack","001","123-1111-1234",1,18);
+        Visitor visitor2 = new Visitor("Tom", "002","123-2222-1234",2,20);
+        Visitor visitor3 = new Visitor("Bob", "003","123-3333-1234",3,17);
+        Visitor visitor4 = new Visitor("Steve", "004","123-4444-1234",4,19);
+        Visitor visitor5 = new Visitor("Alex", "005","123-5555-1234",5,21); 
+        ride.addVisitorToHistory(visitor1);
+        ride.addVisitorToHistory(visitor2);
+        ride.addVisitorToHistory(visitor3);
+        ride.addVisitorToHistory(visitor4);
+        ride.addVisitorToHistory(visitor5);
+        ride.sortCompletedVisitors();
+        ride.exportRideHistory("RideHistory");
     }
     public void partSeven(){
     }

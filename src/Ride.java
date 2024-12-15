@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Scanner;
 
 public class Ride implements RideInterface{
     protected String name;
@@ -154,11 +155,11 @@ public class Ride implements RideInterface{
     public void exportRideHistory(String fileName) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(fileName+".csv"))) {
             // 写入CSV标题行
-            writer.println("Name,Age,vid");
+            writer.println("Name,id,phoneNum,vid,age");
 
             // 遍历已完成的游客，并将他们的信息写入文件
             for (Visitor visitor : completedCollection) {
-                writer.printf("%s,%s,%s,%d,%d%n", visitor.getName(), visitor.getId(), visitor.getPhoneNum(),visitor.getAge(), visitor.getvid());
+                writer.printf("%s,%s,%s,%d,%d%n", visitor.getName(), visitor.getId(), visitor.getPhoneNum(), visitor.getvid(),visitor.getAge());
             }
 
             System.out.println("Ride history exported to " + fileName + ".csv");
@@ -166,4 +167,27 @@ public class Ride implements RideInterface{
             System.err.println("Error exporting ride history: " + e.getMessage());
         }
     }
+
+    public void importRideHistory(String fileName) {
+    try (Scanner scanner = new Scanner(new File(fileName))) {
+        scanner.nextLine(); // 跳过标题行
+
+        while (scanner.hasNextLine()) {
+            String[] parts = scanner.nextLine().split(",");
+            if (parts.length == 5) {
+                try {
+                    Visitor visitor = new Visitor(parts[0], parts[1], parts[2], Integer.parseInt(parts[3]),Integer.parseInt(parts[4]));
+                    completedCollection.add(visitor);
+                } catch (NumberFormatException e) {
+                    // 忽略格式错误的行
+                }
+            }
+        }
+    } catch (FileNotFoundException e) {
+        // 文件未找到时处理异常
+    } catch (IOException e) {
+        // 处理其他 I/O 异常
+    }
+}
+
 }
