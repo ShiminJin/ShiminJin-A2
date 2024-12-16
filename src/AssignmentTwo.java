@@ -1,15 +1,15 @@
 public class AssignmentTwo {
     public static void main(String[] args) {
-        //AssignmentTwo part3 = new AssignmentTwo();
-        //part3.partThree();
-        //AssignmentTwo part4A = new AssignmentTwo();
-        //part4A.partFourA();       
-        //AssignmentTwo part4B = new AssignmentTwo();
-        //part4B.partFourB();
-        //AssignmentTwo part5 = new AssignmentTwo();
-        //part5.partFive();
-        //AssignmentTwo part6 = new AssignmentTwo();
-        //part6.partSix();
+        AssignmentTwo part3 = new AssignmentTwo();
+        part3.partThree();
+        AssignmentTwo part4A = new AssignmentTwo();
+        part4A.partFourA();       
+        AssignmentTwo part4B = new AssignmentTwo();
+        part4B.partFourB();
+        AssignmentTwo part5 = new AssignmentTwo();
+        part5.partFive();
+        AssignmentTwo part6 = new AssignmentTwo();
+        part6.partSix();
         AssignmentTwo part7 = new AssignmentTwo();
         part7.partSeven();
     }
